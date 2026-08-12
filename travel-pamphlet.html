@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>対の旅 — 三島・沼津 一泊二日</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Old+Mincho:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --yoi:#12142a;
+  --yoi-2:#1b1f3d;
+  --yoi-3:#242a52;
+  --beni:#c1393c;
+  --suou:#7e2b3f;
+  --kin:#cd9f4f;
+  --kin-soft:#e8cf9c;
+  --shiro:#f3ece0;
+  --shiro-dim:#c9c3ba;
+  --momo:#f2a6a0;
+  --momo-deep:#e8827a;
+  --line:rgba(205,159,79,0.25);
+  --shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:
+    radial-gradient(ellipse at 20% -10%, rgba(126,43,63,0.35), transparent 55%),
+    radial-gradient(ellipse at 90% 10%, rgba(205,159,79,0.12), transparent 45%),
+    var(--yoi);
+  color:var(--shiro);
+  font-family:'Zen Kaku Gothic New', sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  font-size:15.5px;
+  line-height:1.6;
+}
+.paper-noise{
+  position:fixed; inset:0; pointer-events:none; z-index:0; opacity:0.05; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.wrap{max-width:640px;margin:0 auto;position:relative;z-index:1;}
+.mincho{font-family:'Shippori Mincho B1', serif;}
+.oldmincho{font-family:'Zen Old Mincho', serif;}
+a{color:inherit;}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative; padding:76px 24px 54px; text-align:center; overflow:hidden;
+  border-bottom:1px solid var(--line);
+}
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg, transparent 0%, var(--yoi) 92%),
+    radial-gradient(circle at 50% 18%, rgba(193,57,60,0.35), transparent 60%);
+}
+.hero-torii{width:120px;height:auto;margin:0 auto 18px;display:block;opacity:0.92;filter:drop-shadow(0 0 18px rgba(193,57,60,0.55));}
+.eyebrow{
+  letter-spacing:0.42em; font-size:12px; color:var(--kin-soft); text-transform:uppercase;
+  margin-bottom:18px; display:flex; align-items:center; justify-content:center; gap:10px;
+}
+.eyebrow::before,.eyebrow::after{content:"";width:26px;height:1px;background:var(--kin);opacity:0.6;}
+.hero h1{
+  font-size:clamp(38px,11vw,54px); line-height:1.25; margin:0 0 14px; font-weight:800;
+  background:linear-gradient(180deg,#fff 10%, var(--kin-soft) 55%, var(--kin) 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.hero p.lead{font-size:15px;line-height:2;color:var(--shiro-dim);max-width:420px;margin:0 auto;}
+.hero .fam{
+  margin-top:28px;display:inline-flex;gap:10px;flex-wrap:wrap;justify-content:center;
+}
+.fam span{
+  border:1px solid var(--line); padding:6px 14px; border-radius:100px; font-size:13px;
+  letter-spacing:.06em; color:var(--kin-soft); background:rgba(205,159,79,0.06);
+}
+.dates{margin-top:18px;font-size:14px;color:var(--shiro-dim);letter-spacing:.08em;}
+
+/* ---------- SECTION SHELL ---------- */
+section.block{padding:56px 22px;position:relative;}
+.divider-tsugai{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 0 40px;}
+.divider-tsugai svg{width:34px;height:34px;opacity:.85;}
+.divider-tsugai .dtxt{font-size:12px;letter-spacing:.5em;color:var(--kin-soft);}
+.divider-tsugai::before,.divider-tsugai::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--kin) 50%,transparent);opacity:.5;}
+
+h2.stitle{
+  font-size:26px;margin:0 0 6px;font-weight:700;color:var(--shiro);
+}
+p.ssub{font-size:13px;color:var(--kin-soft);letter-spacing:.1em;margin:0 0 26px;}
+
+/* ---------- CONCEPT ---------- */
+.concept-card{
+  background:linear-gradient(155deg,var(--yoi-2),var(--yoi-3));
+  border:1px solid var(--line); border-radius:18px; padding:28px 22px; box-shadow:var(--shadow);
+  position:relative; overflow:hidden;
+}
+.concept-card::after{
+  content:"太"; position:absolute; right:-6px; bottom:-30px; font-size:180px; font-family:'Shippori Mincho B1',serif;
+  color:rgba(193,57,60,0.08); font-weight:800; line-height:1;
+}
+.concept-card p{font-size:15px;line-height:2.05;color:var(--shiro-dim);position:relative;z-index:1;}
+.concept-card p+p{margin-top:14px;}
+.concept-tags{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap;position:relative;z-index:1;}
+.concept-tags span{
+  font-size:12.5px; padding:6px 12px; border-radius:8px; background:rgba(193,57,60,0.16);
+  border:1px solid rgba(193,57,60,0.4); color:var(--kin-soft); letter-spacing:.06em;
+}
+
+/* ---------- MAP ---------- */
+.map-frame{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);}
+.map-frame iframe{display:block;width:100%;height:230px;border:0;filter:grayscale(0.15) contrast(1.05);}
+.route-btns{display:flex;flex-direction:column;gap:10px;margin-top:14px;}
+.route-btn{
+  display:flex;align-items:center;gap:10px;text-decoration:none;
+  background:linear-gradient(135deg,var(--beni),var(--suou)); color:#fff; font-weight:700;
+  border-radius:100px; padding:13px 18px; font-size:14px; box-shadow:0 8px 20px rgba(193,57,60,0.3);
+}
+.route-btn svg{width:20px;height:20px;flex:none;}
+.pin-list{margin-top:16px;display:flex;flex-direction:column;gap:8px;}
+.pin{
+  display:flex;align-items:center;gap:12px;background:var(--yoi-2);border:1px solid var(--line);
+  border-radius:100px;padding:10px 16px 10px 10px;text-decoration:none;transition:transform .15s ease, border-color .15s ease;
+}
+.pin:active{transform:scale(0.98);}
+.pin .picon{
+  width:34px;height:34px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 35% 30%, rgba(242,166,160,0.35), rgba(193,57,60,0.18));
+  border:1px solid var(--line);
+}
+.pin .picon svg{width:20px;height:20px;}
+.pin .pin-name{font-size:14px;flex:1;color:var(--shiro);}
+.pin .orating{
+  font-size:11px;color:var(--momo);background:rgba(242,166,160,0.12);border:1px solid rgba(242,166,160,0.35);
+  padding:2px 8px;border-radius:100px;white-space:nowrap;font-weight:700;
+}
+.pin .pin-go{font-size:11px;color:var(--kin-soft);letter-spacing:.05em;white-space:nowrap;}
+
+/* ---------- DAY TABS ---------- */
+.day-tabs{display:flex;gap:10px;margin-bottom:22px;}
+.day-tab{
+  flex:1;text-align:center;padding:12px 0;border-radius:12px;border:1px solid var(--line);
+  background:var(--yoi-2);font-size:14px;letter-spacing:.06em;color:var(--shiro-dim);cursor:pointer;
+  transition:all .2s ease;
+}
+.day-tab.active{
+  background:linear-gradient(135deg,var(--beni),var(--suou)); color:#fff; border-color:transparent;
+  box-shadow:0 8px 20px rgba(193,57,60,0.35); font-weight:700;
+}
+.day-panel{display:none;}
+.day-panel.active{display:block;animation:fadein .35s ease;}
+@keyframes fadein{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+
+/* ---------- TIMELINE ---------- */
+.timeline{position:relative;padding-left:30px;}
+.timeline::before{content:"";position:absolute;left:19px;top:6px;bottom:6px;width:1px;background:linear-gradient(180deg,var(--kin),rgba(205,159,79,0.08));}
+.trow{position:relative;margin-bottom:20px;}
+.trow .ticon{
+  position:absolute; left:-30px; top:0; width:38px;height:38px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 35% 30%, rgba(205,159,79,0.28), rgba(18,20,42,0.6));
+  border:2px solid var(--kin); z-index:2;
+}
+.trow.starred .ticon{border-color:var(--momo);background:radial-gradient(circle at 35% 30%, rgba(242,166,160,0.4), rgba(193,57,60,0.22));}
+.trow .ticon svg{width:22px;height:22px;}
+.tcontent{padding-left:16px;}
+.ttime{font-size:12.5px;color:var(--kin-soft);letter-spacing:.06em;margin-bottom:6px;font-weight:700;}
+.tcard{
+  background:var(--yoi-2); border:1px solid var(--line); border-radius:20px; padding:14px 16px;
+}
+.tcard .thead{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+.tcard .ttitle{font-size:15.5px;font-weight:700;color:var(--shiro);line-height:1.5;}
+.tcard .tnote{font-size:13px;color:var(--shiro-dim);margin-top:4px;line-height:1.7;}
+.star{color:var(--kin);font-size:14px;flex:none;}
+
+.opt-list{margin-top:10px;display:flex;flex-direction:column;gap:8px;}
+.opt-btn{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(205,159,79,0.06); border:1px solid var(--line); border-radius:100px;
+  padding:9px 14px 9px 8px; text-align:left; width:100%; color:var(--shiro); font-size:14px;
+  font-family:inherit; cursor:pointer;
+}
+.opt-btn .oicon{
+  width:30px;height:30px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 35% 30%, rgba(242,166,160,0.35), rgba(193,57,60,0.18));
+  border:1px solid var(--line);
+}
+.opt-btn .oicon svg{width:18px;height:18px;}
+.opt-btn .oname{font-weight:600;flex:1;}
+.opt-btn .orating{
+  font-size:11.5px;color:var(--momo);background:rgba(242,166,160,0.12);border:1px solid rgba(242,166,160,0.35);
+  padding:2px 8px;border-radius:100px;white-space:nowrap;font-weight:700;
+}
+.opt-btn .oarrow{color:var(--kin-soft);font-size:15px;}
+.spot-btn{
+  margin-top:12px; display:inline-flex; align-items:center; gap:8px;
+  background:linear-gradient(135deg,rgba(193,57,60,0.22),rgba(126,43,63,0.22));
+  border:1px solid rgba(193,57,60,0.45); color:var(--kin-soft); font-size:13.5px;
+  padding:9px 14px; border-radius:100px; cursor:pointer; font-family:inherit; letter-spacing:.03em;
+}
+
+/* ---------- OVERLAY PAGE ---------- */
+.overlay{
+  position:fixed; inset:0; background:var(--yoi); z-index:50; transform:translateY(100%);
+  transition:transform .38s cubic-bezier(.2,.8,.2,1); overflow-y:auto;
+}
+.overlay.open{transform:translateY(0);}
+.ov-hero{
+  position:relative; padding:60px 22px 32px; text-align:center;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(193,57,60,0.4), transparent 65%),
+    linear-gradient(180deg,var(--yoi-3),var(--yoi));
+  border-bottom:1px solid var(--line);
+}
+.ov-close{
+  position:fixed; top:16px; right:16px; z-index:60; width:42px;height:42px;border-radius:50%;
+  background:rgba(18,20,42,0.85); border:1px solid var(--line); color:var(--kin-soft);
+  display:flex;align-items:center;justify-content:center;font-size:19px;cursor:pointer;
+  backdrop-filter:blur(4px);
+}
+.ov-icon{
+  width:104px;height:104px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, rgba(242,166,160,0.4), rgba(193,57,60,0.16) 70%);
+  border:2px solid rgba(205,159,79,0.4);
+  box-shadow:0 10px 26px rgba(193,57,60,0.35), inset 0 0 0 4px rgba(18,20,42,0.4);
+}
+.ov-icon svg{width:60px;height:60px;}
+.ov-cat{font-size:12px;letter-spacing:.3em;color:var(--kin-soft);margin-bottom:10px;text-transform:uppercase;}
+.ov-title{font-size:26px;font-weight:700;line-height:1.4;margin:0 0 8px;}
+.ov-sub{font-size:13.5px;color:var(--shiro-dim);letter-spacing:.03em;}
+.ov-gallery{display:grid;grid-template-columns:1.6fr 1fr;grid-template-rows:1fr 1fr;gap:3px;border-bottom:1px solid var(--line);}
+.ov-gallery img{width:100%;height:100%;object-fit:cover;display:block;}
+.ov-gallery img:first-child{grid-row:1 / span 2;}
+.ov-gallery.single{display:block;}
+.ov-gallery.single img{width:100%;aspect-ratio:16/10;object-fit:cover;}
+.ov-gallery.two{grid-template-columns:1fr 1fr;grid-template-rows:1fr;}
+.ov-gallery.two img:first-child{grid-row:auto;}
+.ov-gallery.two img{aspect-ratio:1/1;}
+.ov-body{padding:26px 22px 60px;}
+.ov-body p{font-size:15.5px;line-height:2.05;color:var(--shiro-dim);margin:0 0 16px;}
+.infogrid{display:grid;grid-template-columns:auto 1fr;gap:10px 14px;margin:22px 0;font-size:14px;}
+.infogrid dt{color:var(--kin-soft);letter-spacing:.05em;white-space:nowrap;}
+.infogrid dd{margin:0;color:var(--shiro);}
+.linkrow{display:flex;flex-direction:column;gap:10px;margin-top:22px;}
+.linkbtn{
+  display:flex;align-items:center;justify-content:space-between;text-decoration:none;
+  padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--yoi-2);color:var(--shiro);font-size:14px;
+}
+.linkbtn.gold{background:linear-gradient(135deg,rgba(205,159,79,0.18),rgba(205,159,79,0.06));border-color:rgba(205,159,79,0.4);}
+.linkbtn.map{background:linear-gradient(135deg,var(--beni),var(--suou));border-color:transparent;color:#fff;font-weight:700;}
+.linkbtn .larrow{opacity:.7;}
+.photonote{font-size:12px;color:var(--shiro-dim);opacity:.7;margin-top:-8px;margin-bottom:18px;}
+
+/* ---------- HOTEL / PLAN EXTRAS ---------- */
+.plan-box{
+  border:1px solid rgba(205,159,79,0.4); background:rgba(205,159,79,0.06); border-radius:14px;
+  padding:16px 16px; margin:18px 0;
+}
+.plan-box .pb-label{font-size:11px;letter-spacing:.2em;color:var(--kin-soft);margin-bottom:6px;}
+.plan-box .pb-name{font-size:16px;font-weight:700;color:var(--shiro);line-height:1.6;}
+
+footer{text-align:center;padding:50px 22px 70px;color:var(--shiro-dim);font-size:12.5px;letter-spacing:.06em;line-height:2;}
+footer .fmark{width:34px;height:34px;margin:0 auto 16px;opacity:.6;}
+</style>
+</head>
+<body>
+<div class="paper-noise"></div>
+<div class="wrap">
+
+  <!-- ============ HERO ============ -->
+  <div class="hero">
+    <svg class="hero-torii" viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="18" y="30" width="164" height="9" rx="2" fill="var(--beni)"/>
+      <rect x="10" y="46" width="180" height="6" rx="2" fill="var(--kin)"/>
+      <rect x="46" y="52" width="11" height="82" fill="var(--beni)"/>
+      <rect x="143" y="52" width="11" height="82" fill="var(--beni)"/>
+      <rect x="40" y="88" width="120" height="7" fill="var(--kin)"/>
+    </svg>
+    <div class="eyebrow">TRAVEL PAMPHLET 2026</div>
+    <h1 class="mincho">旅は太く短く。</h1>
+    <p class="lead">食・遊・学を一泊二日に凝縮する、超濃密トリップ。<br>静岡の朝を食べ尽くし、体を目一杯動かし、夜は水の都の祭に紛れ込む——<br>三人で駆け抜ける、対（つい）の旅。</p>
+    <div class="dates mincho">2026.08.15 SAT — 08.16 SUN</div>
+    <div class="fam">
+      <span>博文</span><span>晴奈</span><span>芹奈</span>
+    </div>
+  </div>
+
+  <!-- ============ CONCEPT ============ -->
+  <section class="block" id="concept">
+    <div class="divider-tsugai">
+      <svg viewBox="0 0 40 40"><path d="M20 4 L34 20 L20 36 L6 20 Z" stroke="var(--kin)" stroke-width="1.4" fill="none"/></svg>
+      <span class="dtxt">概要</span>
+      <svg viewBox="0 0 40 40"><path d="M20 4 L34 20 L20 36 L6 20 Z" stroke="var(--kin)" stroke-width="1.4" fill="none"/></svg>
+    </div>
+    <h2 class="stitle mincho">コンセプト</h2>
+    <p class="ssub">CONCEPT — 太く短く、食・遊・学</p>
+    <div class="concept-card">
+      <p>早朝の沼津港で静岡の海を食べ尽くし、三島スカイウォークで体力を使い切るまで遊び倒す。夜は三嶋大社の夏祭りに紛れ込んで、水の都・三島の熱気と伝統に触れる——。</p>
+      <p>「旅は太く短く」を合言葉に、日常のストレスを発散してテンションを爆上げしながら、静岡三島・沼津の食・文化・自然を一泊二日に目一杯詰め込む、博文・晴奈・芹奈、三人の対（つい）の旅。</p>
+      <div class="concept-tags">
+        <span>早朝・沼津グルメ</span><span>三島スカイウォーク</span><span>セグウェイ</span><span>三嶋大祭り</span><span>富士山ビュー温泉宿</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MAP ============ -->
+  <section class="block" id="map">
+    <h2 class="stitle mincho">往訪先マップ</h2>
+    <p class="ssub">MAP — タップでGoogleマップへ</p>
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps?q=%E4%B8%89%E5%B3%B6%E9%A7%85&z=12&output=embed" loading="lazy"></iframe>
+    </div>
+    <div class="route-btns" id="routeBtns"></div>
+    <div class="pin-list" id="pinList"></div>
+  </section>
+
+  <!-- ============ SCHEDULE ============ -->
+  <section class="block" id="schedule">
+    <div class="divider-tsugai">
+      <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15" stroke="var(--kin)" stroke-width="1.4" fill="none"/></svg>
+      <span class="dtxt">旅程</span>
+      <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15" stroke="var(--kin)" stroke-width="1.4" fill="none"/></svg>
+    </div>
+    <h2 class="stitle mincho">スケジュール</h2>
+    <p class="ssub">SCHEDULE — ※印はタップで詳細ページへ</p>
+
+    <div class="day-tabs">
+      <div class="day-tab active" data-day="1">DAY 1 — 8/15(土)</div>
+      <div class="day-tab" data-day="2">DAY 2 — 8/16(日)</div>
+    </div>
+
+    <div class="day-panel active" id="day1" data-timeline></div>
+    <div class="day-panel" id="day2" data-timeline></div>
+  </section>
+
+  <footer>
+    <svg class="fmark" viewBox="0 0 40 40"><path d="M20 4 L34 20 L20 36 L6 20 Z" stroke="var(--kin)" stroke-width="1.2" fill="none"/></svg>
+    富士山三島東急ホテル 一泊二日<br>
+    博文・晴奈・芹奈の対の旅 — 2026.08.15–16<br>
+    <span style="opacity:.6">※営業時間・料金・開催日程は変更される場合があります。最新情報は各公式サイトでご確認ください。</span>
+  </footer>
+</div>
+
+<button class="ov-close" id="ovClose" style="display:none;">✕</button>
+<div class="overlay" id="overlay">
+  <div class="ov-hero">
+    <div class="ov-icon" id="ovIcon"></div>
+    <div class="ov-cat" id="ovCat"></div>
+    <div class="ov-title mincho" id="ovTitle"></div>
+    <div class="ov-sub" id="ovSub"></div>
+  </div>
+  <div class="ov-gallery" id="ovGallery" style="display:none;"></div>
+  <div class="ov-body" id="ovBody"></div>
+</div>
+
+<script>
+/* ============ ICONS（かわいいテイスト） ============ */
+const ICON = {
+  wave: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="66" cy="26" r="13" fill="var(--kin)"/><circle cx="61" cy="21" r="2" fill="var(--yoi)"/><circle cx="70" cy="21" r="2" fill="var(--yoi)"/><path d="M61 29c2 2 6 2 8 0" stroke="var(--yoi)" stroke-width="1.6" stroke-linecap="round" fill="none"/><path d="M6 52c8-9 15-9 23 0s15 9 23 0 15-9 23 0 15 9 23 0" stroke="var(--momo)" stroke-width="5" stroke-linecap="round" fill="none"/><path d="M6 68c8-9 15-9 23 0s15 9 23 0 15-9 23 0 15 9 23 0" stroke="var(--beni)" stroke-width="5" stroke-linecap="round" fill="none" opacity=".85"/></svg>`,
+  bridge: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M8 46 Q50 12 92 46" stroke="var(--kin)" stroke-width="5" stroke-linecap="round" fill="none"/><rect x="6" y="46" width="10" height="30" rx="4" fill="var(--beni)"/><rect x="84" y="46" width="10" height="30" rx="4" fill="var(--beni)"/><rect x="10" y="66" width="80" height="8" rx="4" fill="var(--kin)"/><circle cx="30" cy="30" r="4" fill="var(--momo)"/><circle cx="70" cy="30" r="4" fill="var(--momo)"/><circle cx="50" cy="18" r="5" fill="var(--shiro)"/></svg>`,
+  tree: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="38" r="28" fill="var(--kin)"/><circle cx="30" cy="52" r="16" fill="var(--kin)" opacity=".85"/><circle cx="70" cy="52" r="16" fill="var(--kin)" opacity=".85"/><circle cx="42" cy="34" r="2.3" fill="var(--yoi)"/><circle cx="58" cy="34" r="2.3" fill="var(--yoi)"/><path d="M42 44c3 3 13 3 16 0" stroke="var(--yoi)" stroke-width="1.8" stroke-linecap="round" fill="none"/><rect x="46" y="66" width="8" height="20" rx="3" fill="var(--beni)"/><circle cx="20" cy="30" r="3" fill="var(--momo)"/><circle cx="82" cy="26" r="2.4" fill="var(--momo)"/></svg>`,
+  segway: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="74" r="15" fill="var(--kin)"/><circle cx="68" cy="74" r="15" fill="var(--kin)"/><circle cx="32" cy="74" r="5" fill="var(--yoi)"/><circle cx="68" cy="74" r="5" fill="var(--yoi)"/><rect x="30" y="34" width="6" height="26" rx="3" fill="var(--beni)"/><rect x="16" y="26" width="34" height="7" rx="3.5" fill="var(--beni)"/><circle cx="50" cy="20" r="6" fill="var(--momo)"/></svg>`,
+  unagi: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M8 52c12-20 28-26 46-20s24 22 38 14c-10 14-28 16-40 6-14 10-32 10-44 0Z" fill="var(--kin)"/><circle cx="20" cy="48" r="2.6" fill="var(--yoi)"/><path d="M15 56c2 2 5 2 7 0" stroke="var(--yoi)" stroke-width="1.6" stroke-linecap="round" fill="none"/><circle cx="10" cy="42" r="2" fill="var(--momo)"/><circle cx="80" cy="34" r="2.2" fill="var(--momo)"/></svg>`,
+  hamburger: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><ellipse cx="50" cy="70" rx="36" ry="9" fill="var(--kin)" opacity=".55"/><ellipse cx="50" cy="54" rx="26" ry="17" fill="var(--beni)"/><path d="M38 50a12 9 0 0 1 24 0" stroke="var(--momo)" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M30 30c1-7 5-7 6-1M44 25c1-7 5-7 6-1M60 28c1-7 5-7 6-1" stroke="var(--kin)" stroke-width="2.4" stroke-linecap="round" opacity=".8"/></svg>`,
+  futon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="42" width="76" height="32" rx="14" fill="var(--kin)" opacity=".5"/><rect x="12" y="42" width="28" height="20" rx="10" fill="var(--beni)"/><circle cx="24" cy="50" r="2" fill="var(--yoi)"/><circle cx="33" cy="50" r="2" fill="var(--yoi)"/><path d="M23 56c2 2 7 2 9 0" stroke="var(--yoi)" stroke-width="1.6" stroke-linecap="round" fill="none"/><rect x="12" y="80" width="76" height="6" rx="3" fill="var(--kin)"/><text x="66" y="34" font-size="16" fill="var(--momo)">z</text><text x="74" y="24" font-size="12" fill="var(--momo)">z</text></svg>`,
+  lantern: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><ellipse cx="50" cy="52" rx="28" ry="34" fill="var(--beni)"/><ellipse cx="50" cy="52" rx="28" ry="34" fill="none" stroke="var(--kin)" stroke-width="3"/><line x1="24" y1="40" x2="76" y2="40" stroke="var(--kin)" stroke-width="2" opacity=".7"/><line x1="24" y1="64" x2="76" y2="64" stroke="var(--kin)" stroke-width="2" opacity=".7"/><circle cx="42" cy="52" r="2.4" fill="var(--yoi)"/><circle cx="58" cy="52" r="2.4" fill="var(--yoi)"/><path d="M42 58c3 3 10 3 13 0" stroke="var(--yoi)" stroke-width="1.8" stroke-linecap="round" fill="none"/><rect x="46" y="14" width="8" height="8" rx="2" fill="var(--kin)"/><rect x="46" y="86" width="8" height="10" rx="2" fill="var(--kin)"/></svg>`,
+  fireworks: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g stroke="var(--kin)" stroke-width="3" stroke-linecap="round"><line x1="50" y1="6" x2="50" y2="24"/><line x1="50" y1="76" x2="50" y2="94"/><line x1="6" y1="50" x2="24" y2="50"/><line x1="76" y1="50" x2="94" y2="50"/><line x1="20" y1="20" x2="32" y2="32"/><line x1="68" y1="68" x2="80" y2="80"/><line x1="80" y1="20" x2="68" y2="32"/><line x1="32" y1="68" x2="20" y2="80"/></g><circle cx="50" cy="50" r="14" fill="var(--momo)"/><circle cx="44" cy="46" r="1.8" fill="var(--yoi)"/><circle cx="56" cy="46" r="1.8" fill="var(--yoi)"/><path d="M44 54c2 2 8 2 10 0" stroke="var(--yoi)" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>`,
+  car: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="44" width="76" height="24" rx="10" fill="var(--kin)"/><path d="M26 44c4-12 14-16 24-16s20 4 24 16" fill="var(--kin)"/><rect x="32" y="34" width="36" height="14" rx="6" fill="var(--yoi)" opacity=".55"/><circle cx="30" cy="70" r="10" fill="var(--beni)"/><circle cx="70" cy="70" r="10" fill="var(--beni)"/><circle cx="30" cy="70" r="3.5" fill="var(--yoi)"/><circle cx="70" cy="70" r="3.5" fill="var(--yoi)"/><circle cx="22" cy="52" r="2.4" fill="var(--shiro)"/></svg>`,
+  tea: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M18 46h50a4 4 0 0 1 4 4c0 16-13 28-29 28s-29-12-29-28a4 4 0 0 1 4-4Z" fill="var(--kin)"/><path d="M70 52h6a10 10 0 0 1 0 20h-8" stroke="var(--kin)" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M32 22c-4 6 4 8 0 14M46 18c-4 6 4 8 0 14" stroke="var(--momo)" stroke-width="3" stroke-linecap="round" fill="none"/><circle cx="34" cy="60" r="2" fill="var(--yoi)"/><circle cx="46" cy="60" r="2" fill="var(--yoi)"/><path d="M34 66c2 2 8 2 10 0" stroke="var(--yoi)" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>`,
+  key: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="34" cy="34" r="20" fill="var(--kin)"/><circle cx="34" cy="34" r="8" fill="var(--yoi)"/><rect x="46" y="46" width="42" height="10" rx="5" fill="var(--beni)" transform="rotate(45 46 46)"/><circle cx="26" cy="28" r="2.2" fill="var(--shiro)"/></svg>`,
+  bowl: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M14 48h72c-2 20-18 32-36 32S16 68 14 48Z" fill="var(--kin)"/><ellipse cx="50" cy="46" rx="36" ry="8" fill="var(--beni)"/><path d="M40 30c-4-6 3-9 -1-14M56 28c-4-6 3-9-1-14" stroke="var(--momo)" stroke-width="3" stroke-linecap="round" fill="none"/><circle cx="43" cy="58" r="2" fill="var(--yoi)"/><circle cx="57" cy="58" r="2" fill="var(--yoi)"/></svg>`,
+  plate: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="54" r="30" fill="var(--kin)" opacity=".5"/><circle cx="50" cy="54" r="18" fill="var(--beni)"/><circle cx="44" cy="50" r="2" fill="var(--yoi)"/><circle cx="56" cy="50" r="2" fill="var(--yoi)"/><path d="M44 58c2 2 8 2 10 0" stroke="var(--yoi)" stroke-width="1.6" stroke-linecap="round" fill="none"/><path d="M18 30v20M18 30c-3 0-3 8 0 8M18 30c3 0 3 8 0 8" stroke="var(--momo)" stroke-width="2.6" stroke-linecap="round" fill="none"/><path d="M82 28c4 0 6 4 4 8l-4 6v14" stroke="var(--momo)" stroke-width="2.6" stroke-linecap="round" fill="none"/></svg>`,
+  footprints: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><ellipse cx="34" cy="34" rx="11" ry="15" fill="var(--kin)" transform="rotate(-12 34 34)"/><circle cx="26" cy="20" r="3.4" fill="var(--kin)"/><circle cx="34" cy="16" r="3.6" fill="var(--kin)"/><circle cx="43" cy="17" r="3.2" fill="var(--kin)"/><ellipse cx="66" cy="66" rx="11" ry="15" fill="var(--momo)" transform="rotate(12 66 66)"/><circle cx="58" cy="82" r="3.2" fill="var(--momo)"/><circle cx="66" cy="86" r="3.6" fill="var(--momo)"/><circle cx="75" cy="83" r="3.4" fill="var(--momo)"/></svg>`
+};
+
+/* ============ SPOT DATA ============ */
+const SPOTS = {
+  "numazu-uoichiba":{
+    icon:"wave", cat:"朝食 ①", title:"沼津魚市場食堂", sub:"沼津魚市場 INO 2F・元祖まかない食堂", rating:"3.41",
+    photos:["https://www.numaduuoichibashokudo.jp/wp-content/uploads/2024/04/top_product_2.png","https://www.numaduuoichibashokudo.jp/wp-content/uploads/2024/04/top_img_4.png","https://www.numaduuoichibashokudo.jp/wp-content/uploads/2024/04/top_img_5.png"],
+    body:[
+      "沼津魚市場INOの2階、市場で働く仲買人たちが通う食堂。毎朝のセリで仕入れた魚介がそのまま並ぶので鮮度は折り紙つきです。",
+      "窓際のカウンター席は沼津港で唯一、駿河湾と伊豆半島を望める展望席。生しらす・生桜えびは漁がある日限定の日替わりです。"
+    ],
+    info:{"住所":"沼津市千本港町128-3 沼津魚市場INO 2F","営業":"平日10:00〜16:00／土日祝9:00〜17:00（火・水定休）","名物":"獲れたて4種刺身盛り合わせ／金目鯛の煮付け","食べログ":"★3.41"},
+    official:"https://www.numaduuoichibashokudo.jp/",
+    tabelog:"https://tabelog.com/shizuoka/A2205/A220501/22004178/",
+    mapQuery:"沼津魚市場食堂 静岡県沼津市千本港町128-3"
+  },
+  "nishiyo":{
+    icon:"wave", cat:"朝食 ②", title:"にし与", sub:"沼津港40年、行列必至の海鮮食堂", rating:"3.55",
+    photos:["https://numazuminato.com/wp/wp-content/uploads/2024/03/nisiyo_img01.jpg","https://numazuminato.com/wp/wp-content/uploads/2024/03/nisiyo_img02.jpg","https://numazuminato.com/wp/wp-content/uploads/2024/03/nisiyo_img03.jpg"],
+    body:[
+      "沼津港で40年以上、仲買人たちの朝ごはんを支えてきた老舗食堂。看板は11種盛りの「にし与丼」で、厚みのある自家製あじフライも名物です。",
+      "早朝から地元客・観光客で賑わうため、開店直後の来店がおすすめ。土日は10時開店で行列ができやすい点は要注意です。"
+    ],
+    info:{"住所":"沼津市千本港町109 ダイノブセンター内","営業":"6:00〜15:00（水・木定休）","名物":"にし与丼／あじフライ定食","食べログ":"★3.55"},
+    official:"https://numazuminato.com/shop/nisiyo/",
+    tabelog:"https://tabelog.com/shizuoka/A2205/A220501/22000754/",
+    mapQuery:"にし与 静岡県沼津市千本港町109"
+  },
+  "sekino":{
+    icon:"wave", cat:"朝食 ③", title:"せきの", sub:"早朝開店、市場関係者御用達の大衆食堂", rating:"3.47",
+    photos:[],
+    body:[
+      "沼津港で「にし与」と並び称される早朝食堂。5〜6時から営業し、長年市場関係者の胃袋を支えてきました。",
+      "地あじフライや刺身盛り定食が評判で、骨せんべいが添えられるのも特徴。カウンター中心の小さな店なので、なるべく早い時間の来店が安心です。"
+    ],
+    info:{"住所":"沼津市千本港町122","営業":"月〜水 6:00〜14:00／金 8:00〜14:00／土日 6:00〜15:00（木定休）","名物":"地あじフライ／刺身盛り定食","食べログ":"★3.47"},
+    official:null,
+    tabelog:"https://tabelog.com/shizuoka/A2205/A220501/22000788/",
+    mapQuery:"せきの 静岡県沼津市千本港町122"
+  },
+  "skywalk":{
+    icon:"bridge", cat:"観光スポット", title:"三島スカイウォーク", sub:"日本一長い歩行者専用吊り橋（箱根西麓・三島大吊橋）",
+    photos:["https://www.mishima-kankou.com/app/uploads/2019/06/8e7b7a9131d152af59b0f5ea60043909.jpg","https://www.mishima-kankou.com/app/uploads/2019/06/80f30b3809131e0a33056727f702d69c-902x640.jpg","https://www.mishima-kankou.com/app/uploads/2019/06/f67916b8f87a67f0a318d08f3f0fb6cb.jpg"],
+    body:[
+      "全長400mの日本一長い人道専用吊り橋。橋の上から日本一高い富士山・日本一深い駿河湾を同時に望める、まさに三つの「日本一」が揃う絶景スポットです。",
+      "橋を渡る前にはスカイガーデンやラグジュアリートイレ、渡った先にはフォレストアドベンチャーやドッグラン、Kicoroの森など、家族で1日たっぷり遊べるエリアが広がっています。今回のプランではここでフォレストアドベンチャーとセグウェイの2つのアクティビティを楽しみます。"
+    ],
+    info:{"住所":"三島市笹原新田313","営業":"9:00〜17:00（年中無休・悪天候時は通行不可の場合あり）","渡橋料":"大人1,100円／中高生500円／小学生200円","駐車場":"普通車400台（無料）"},
+    official:"https://mishima-skywalk.jp/",
+    tabelog:null,
+    mapQuery:"三島スカイウォーク 静岡県三島市笹原新田313"
+  },
+  "forest-adventure":{
+    icon:"tree", cat:"アクティビティ", title:"フォレストアドベンチャー", sub:"三島スカイウォーク・樹上アドベンチャー",
+    photos:["https://www.mishima-kankou.com/app/uploads/2020/07/img_plan-adventure_00-960x640.jpg","https://www.mishima-kankou.com/app/uploads/2020/07/img_plan-adventure_01-960x640.jpg","https://www.mishima-kankou.com/app/uploads/2019/06/ee2abe88b9dd70b9df442c10d31db1db.jpg"],
+    body:[
+      "三島スカイウォーク内、樹上を舞台にしたアドベンチャーコース。ハーネスを装着し、富士山を望む森の中でジップラインやつり橋、ロープの課題を次々にクリアしていきます。",
+      "目玉は往復560mのロングジップスライド。受付・説明を含めて所要目安は約2〜3時間、小学4年生以上・体重130kg以下（ロングジップスライドは100kg以下）が対象です。"
+    ],
+    info:{"所要目安":"約2〜3時間（受付20分前集合）","対象":"小学4年生以上・体重130kg以下","料金":"アドベンチャーコース 3,900円（ロングジップ込み）","備考":"動きやすい服装・スニーカー推奨"},
+    official:"https://mishima-skywalk.jp/activities/",
+    tabelog:null,
+    mapQuery:"三島スカイウォーク"
+  },
+  "segway":{
+    icon:"segway", cat:"アクティビティ", title:"セグウェイガイドツアー", sub:"三島スカイウォーク・中級者コース",
+    photos:["https://www.mishima-kankou.com/app/uploads/2020/07/img_plan-Segway_00-960x640.jpg","https://www.mishima-kankou.com/app/uploads/2020/07/img_plan-Segway_02-960x640.jpg","https://www.mishima-kankou.com/app/uploads/2019/06/80f30b3809131e0a33056727f702d69c-902x640.jpg"],
+    body:[
+      "三島スカイウォーク内で楽しめる、少人数制のセグウェイガイドツアー。まず展望デッキへ登って駿河湾を一望し、記念撮影の後、森の中の専用コースへ進みます。",
+      "対象は16歳以上・体重45〜118kg。中級コースはセグウェイ経験者限定のため、未経験の場合は当日初級コースに変更となります。事前に経験の有無を確認しておくと安心です。"
+    ],
+    info:{"所要":"約60分（開始20分前集合）","対象":"16歳以上・体重45〜118kg","料金":"4,900円（税込・予約優先）","注意":"中級は経験者限定／未成年は保護者同意が必要"},
+    official:"https://mishima-skywalk.jp/activities/segway-guided-tour/",
+    tabelog:null,
+    mapQuery:"三島スカイウォーク"
+  },
+  "unagi-bandou":{
+    icon:"unagi", cat:"昼食 ①", title:"うなぎの坂東", sub:"三島駅南口徒歩1分・関東風の名店", rating:"3.59",
+    photos:["https://www.mishima-kankou.com/app/uploads/2019/11/img_bandou_01-2.jpg","https://www.mishima-kankou.com/app/uploads/2019/11/img_bandou_02.jpg","https://www.mishima-kankou.com/app/uploads/2019/11/img_bandou_03.jpg"],
+    body:[
+      "JR三島駅南口、楽寿園のとなりに立つうなぎ専門店。背開きにして白焼きにした後、蒸してから炭火で香ばしく焼き上げる関東風が特徴です。",
+      "ふっくら柔らかな身と、後をひかない甘辛いタレが持ち味。中伊豆産の生わさびを添えた白焼きも人気で、駅近なので移動の合間にも寄りやすい立地です。"
+    ],
+    info:{"住所":"三島市一番町15-28 楓ビル2階","営業":"11:00〜20:30（L.O.20:00）不定休","名物":"うな重／白焼き","食べログ":"★3.59"},
+    official:"https://www.unagi-bandou.com/index.php",
+    tabelog:"https://tabelog.com/shizuoka/A2205/A220501/22033548/",
+    mapQuery:"うなぎの坂東 静岡県三島市一番町15-28"
+  },
+  "unagi-kyomaru":{
+    icon:"unagi", cat:"昼食 ②", title:"寿司・うなぎ処 京丸", sub:"ホテル内！うなぎ問屋直営の寿司・うなぎ店", rating:"3.48",
+    photos:["https://rimage.gnst.jp/rest/img/eefga6uf0000/s_0n7q.jpg"],
+    body:[
+      "うなぎ専門の卸問屋が営む直営店で、実は富士山三島東急ホテル内（ミトワみしま2階）にあります。愛鷹山系の地下水で仕立てたうなぎに加え、沼津港・豊洲市場直送の寿司ネタも味わえるのが強みです。",
+      "問屋直営ならではの、うなぎの刺身や炙りといった珍しいメニューも。ホテルへの移動がそのまま食事になる動線の良さも魅力です。"
+    ],
+    info:{"住所":"富士山三島東急ホテル ミトワみしま2階","営業":"11:00〜21:00（L.O.20:30）木曜定休","名物":"うな重／うなぎの刺身・炙り／寿司","食べログ":"★3.48"},
+    official:"https://kyoumaru.jp/",
+    tabelog:"https://tabelog.com/shizuoka/A2205/A220501/22036886/",
+    mapQuery:"寿司・うなぎ処 京丸 富士山三島東急ホテル 三島市一番町17-1"
+  },
+  "sawayaka":{
+    icon:"hamburger", cat:"昼食 ③", title:"炭焼きレストランさわやか 長泉店", sub:"静岡県民のソウルフード、げんこつハンバーグ", rating:"3.52",
+    photos:["https://www.genkotsu-hb.com/storage/menu/M1001112.jpg","https://www.genkotsu-hb.com/storage/menu/M1002112.jpg","https://www.genkotsu-hb.com/storage/menu/M1009113.jpg"],
+    body:[
+      "静岡県民のソウルフード「げんこつハンバーグ」で知られるローカルチェーン。三島駅から車で5分ほどの長泉店が最寄りです。",
+      "250gの丸いハンバーグを目の前で店員がカットし、断面はレア状態のまま鉄板の余熱でじっくり火を通していくスタイルが名物。予約不可・行列必至なので、到着後すぐ受付を済ませておくのがコツです。"
+    ],
+    info:{"住所":"静岡県駿東郡長泉町中土狩340-5","営業":"平日10:45〜22:00／土日祝10:30〜22:00（L.O.21:00・木定休）","名物":"げんこつハンバーグ250g","食べログ":"★3.52"},
+    official:"https://www.genkotsu-hb.com/",
+    tabelog:"https://tabelog.com/shizuoka/A2204/A220402/22030968/",
+    mapQuery:"炭焼きレストランさわやか 長泉店 静岡県駿東郡長泉町中土狩340-5"
+  },
+  "hotel":{
+    icon:"futon", cat:"宿泊", title:"富士山三島東急ホテル", sub:"JR三島駅南口徒歩1分・富士を感じるベースホテル",
+    photos:["https://www.tokyuhotels.co.jp/mishima-h/room/superior-double/images/room_deluxe-corner-twin_mv_images.jpg","https://www.tokyuhotels.co.jp/mishima-h/top/images/top_mv_image_01.jpg","https://www.tokyuhotels.co.jp/mishima-h/restaurant/dinner/images/restaurant_dinner_images_01_1_316.jpg"],
+    body:[
+      "2020年開業、三島駅すぐのロケーションから富士山を眺めるベースホテル。最上階の温浴施設では地上60mから富士山や駿河湾の絶景を望む露天風呂も楽しめます。",
+      "今回の客室は「デラックスコーナーツイン（富士山ビュー）」。西側の角部屋で2面採光の明るい造りです。夕食は「TOKYU ROYAL CLUBメンバー様限定 ディナー不二コースグレードアッププラン」で、13階のレストラン 炉 L'EAU にて不二コース（計7品）をいただきます。"
+    ],
+    info:{"住所":"三島市一番町17-1（JR三島駅南口徒歩1分）","客室":"デラックスコーナーツイン／39.1㎡／3〜9階／2ベッド＋エキストラベッド","夕食会場":"炉 L'EAU（13F）／不二コース 計7品"},
+    official:"https://www.tokyuhotels.co.jp/mishima-h/index.html",
+    tabelog:null,
+    mapQuery:"富士山三島東急ホテル 三島市一番町17-1",
+    extraLinks:[
+      {label:"客室詳細（デラックスコーナーツイン）",url:"https://www.tokyuhotels.co.jp/mishima-h/room/deluxe-corner-twin/index.html"},
+      {label:"ディナー 不二コース詳細",url:"https://www.tokyuhotels.co.jp/mishima-h/restaurant/80300/index.html"}
+    ]
+  },
+  "mishima-taisai":{
+    icon:"fireworks", cat:"夜祭り", title:"三嶋大社 例大祭（三嶋大祭り）", sub:"手筒花火とシャギリが響く、三島最大の夏祭り",
+    photos:["https://www.mishima-kankou.com/app/uploads/2026/07/mishimaoomaturi2026-960x330.jpg","https://www.mishima-kankou.com/app/uploads/2025/07/DSC_2455.jpg"],
+    body:[
+      "三嶋大社を中心に、2026年は8月15日(土)〜17日(月)に行われる三島市最大級の夏祭り。手筒花火の奉納や、シャギリを響かせる山車の巡行など、水の都・三島の熱気が一気に高まる3日間です。",
+      "例年約50万人が訪れる規模で、ホテルから徒歩圏内という好立地も魅力。混雑するため貴重品管理とはぐれ防止の集合場所だけ決めておくと安心です。"
+    ],
+    info:{"住所":"三嶋大社／三島市大宮町2-1-5","会期":"2026年8月15日(土)〜17日(月)","アクセス":"ホテルから徒歩圏内"},
+    official:"https://www.mishima-cci.com/maturi/",
+    tabelog:null,
+    mapQuery:"三嶋大社 静岡県三島市大宮町2-1-5"
+  }
+};
+
+/* ============ TIMELINE ICON（スポットに紐付かない項目用） ============ */
+const TICON = { car:"car", tea:"tea", key:"key", bowl:"bowl", plate:"plate", foot:"footprints", lantern:"lantern" };
+
+/* ============ SCHEDULE STRUCTURE ============ */
+const DAY1 = [
+  {time:"4:30–6:00",title:"出発（自宅・世田谷区）",note:"渋滞回避のため早朝出発。約1.5時間の移動。",icon:"car"},
+  {time:"6:00–7:00",title:"朝食 @沼津港近辺",note:"3店舗から選択・組み合わせOK",icon:"bowl",starred:true,options:["numazu-uoichiba","nishiyo","sekino"]},
+  {time:"7:00–8:00",title:"移動",note:"沼津港 → 三島スカイウォーク（約1時間）",icon:"car"},
+  {time:"8:00–10:30",title:"フォレストアドベンチャー",note:"三島スカイウォーク",icon:"tree",starred:true,options:["forest-adventure"]},
+  {time:"10:30–11:30",title:"休憩",note:"園内で水分補給・小休止",icon:"tea"},
+  {time:"11:30–12:30",title:"セグウェイ",note:"三島スカイウォーク・中級者コース",icon:"segway",starred:true,options:["segway"]},
+  {time:"12:30–13:00",title:"移動",note:"三島スカイウォーク → 三島駅（約30分）",icon:"car"},
+  {time:"13:00–14:00",title:"昼食 @三島",note:"3店舗から選択・組み合わせOK",icon:"bowl",starred:true,options:["unagi-bandou","unagi-kyomaru","sawayaka"]},
+  {time:"14:00–18:00",title:"チェックイン＋休憩",note:"富士山三島東急ホテル",icon:"key",starred:true,options:["hotel"]},
+  {time:"18:00–19:00",title:"夕食 @ホテル",note:"炉 L'EAU／ディナー不二コースグレードアッププラン",icon:"plate"},
+  {time:"19:00–21:00頃",title:"三嶋大社で祭",note:"三嶋大祭り",icon:"lantern",starred:true,options:["mishima-taisai"]}
+];
+const DAY2 = [
+  {time:"4:00–6:00",title:"散歩",note:"早朝の三島の街を軽く散策",icon:"foot"},
+  {time:"6:00–7:00",title:"朝食 @ホテル",note:"富士山三島東急ホテル",icon:"bowl"},
+  {time:"7:00–12:00",title:"休憩",note:"富士山三島東急ホテル・温浴施設でゆったり",icon:"tea"},
+  {time:"12:00–14:00",title:"昼食 @三島",note:"3店舗から選択・組み合わせOK（Day1と同じ候補）",icon:"bowl",starred:true,options:["unagi-bandou","unagi-kyomaru","sawayaka"]},
+  {time:"14:00–16:00",title:"帰宅",note:"三島 → 世田谷区（約2時間）",icon:"car"}
+];
+
+/* ============ RENDER TIMELINE ============ */
+function renderTimeline(container, items){
+  container.innerHTML = "";
+  container.classList.add("timeline");
+  items.forEach(it=>{
+    const row = document.createElement("div");
+    row.className = "trow" + (it.starred ? " starred":"");
+    let optHtml = "";
+    if(it.options && it.options.length){
+      if(it.options.length===1){
+        optHtml = `<button class="spot-btn" data-spot="${it.options[0]}">詳細ページを見る →</button>`;
+      } else {
+        optHtml = `<div class="opt-list">` + it.options.map(id=>{
+          const s = SPOTS[id];
+          const ratingHtml = s.rating ? `<span class="orating">★${s.rating}</span>` : "";
+          return `<button class="opt-btn" data-spot="${id}"><span class="oicon">${ICON[s.icon]||""}</span><span class="oname">${s.title}</span>${ratingHtml}<span class="oarrow">›</span></button>`;
+        }).join("") + `</div>`;
+      }
+    }
+    row.innerHTML = `
+      <div class="ticon">${ICON[TICON[it.icon]] || ICON[it.icon] || ""}</div>
+      <div class="tcontent">
+        <div class="ttime">${it.time}</div>
+        <div class="tcard">
+          <div class="thead">
+            <div class="ttitle">${it.title}</div>
+            ${it.starred ? '<div class="star">※</div>' : ''}
+          </div>
+          <div class="tnote">${it.note}</div>
+          ${optHtml}
+        </div>
+      </div>`;
+    container.appendChild(row);
+  });
+}
+renderTimeline(document.getElementById("day1"), DAY1);
+renderTimeline(document.getElementById("day2"), DAY2);
+
+/* ============ DAY TABS ============ */
+document.querySelectorAll(".day-tab").forEach(tab=>{
+  tab.addEventListener("click", ()=>{
+    document.querySelectorAll(".day-tab").forEach(t=>t.classList.remove("active"));
+    document.querySelectorAll(".day-panel").forEach(p=>p.classList.remove("active"));
+    tab.classList.add("active");
+    document.getElementById("day"+tab.dataset.day).classList.add("active");
+  });
+});
+
+/* ============ ROUTE BUTTONS（1日の全ルートをGoogleマップで） ============ */
+const HOME = "東京都世田谷区";
+function routeUrl(origin, waypoints, destination){
+  const wp = waypoints.map(encodeURIComponent).join("|");
+  return `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(destination)}&waypoints=${wp}&travelmode=driving`;
+}
+const day1Route = routeUrl(HOME, ["沼津港 静岡県沼津市千本港町", SPOTS.skywalk.mapQuery, SPOTS.hotel.mapQuery], SPOTS["mishima-taisai"].mapQuery);
+const day2Route = routeUrl(SPOTS.hotel.mapQuery, [SPOTS["unagi-bandou"].mapQuery], HOME);
+const carIcon = ICON.car;
+document.getElementById("routeBtns").innerHTML = `
+  <a class="route-btn" href="${day1Route}" target="_blank" rel="noopener">${carIcon}<span>1日目のルートをGoogleマップで見る（自宅→沼津港→スカイウォーク→ホテル→三嶋大社）</span></a>
+  <a class="route-btn" href="${day2Route}" target="_blank" rel="noopener">${carIcon}<span>2日目のルートをGoogleマップで見る（ホテル→うなぎの坂東→自宅）</span></a>
+`;
+
+/* ============ PIN LIST (MAP SECTION) ============ */
+const pinOrder = ["numazu-uoichiba","nishiyo","sekino","skywalk","unagi-bandou","unagi-kyomaru","sawayaka","hotel","mishima-taisai"];
+const pinList = document.getElementById("pinList");
+pinOrder.forEach(id=>{
+  const s = SPOTS[id];
+  const a = document.createElement("a");
+  a.className = "pin";
+  a.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(s.mapQuery);
+  a.target = "_blank"; a.rel = "noopener";
+  const ratingHtml = s.rating ? `<span class="orating">★${s.rating}</span>` : "";
+  a.innerHTML = `<span class="picon">${ICON[s.icon]||""}</span><span class="pin-name">${s.title}</span>${ratingHtml}<span class="pin-go">Map ›</span>`;
+  pinList.appendChild(a);
+});
+
+/* ============ OVERLAY LOGIC ============ */
+const overlay = document.getElementById("overlay");
+const ovClose = document.getElementById("ovClose");
+function openSpot(id){
+  const s = SPOTS[id];
+  if(!s) return;
+  document.getElementById("ovIcon").innerHTML = ICON[s.icon] || "";
+  document.getElementById("ovCat").textContent = s.cat;
+  document.getElementById("ovTitle").textContent = s.title;
+  document.getElementById("ovSub").textContent = s.sub;
+
+  const galEl = document.getElementById("ovGallery");
+  const photos = s.photos || [];
+  if(photos.length >= 3){
+    galEl.className = "ov-gallery";
+    galEl.style.display = "grid";
+    galEl.innerHTML = photos.slice(0,3).map(p=>`<img src="${p}" loading="lazy" alt="${s.title}">`).join("");
+  } else if(photos.length === 2){
+    galEl.className = "ov-gallery two";
+    galEl.style.display = "grid";
+    galEl.innerHTML = photos.map(p=>`<img src="${p}" loading="lazy" alt="${s.title}">`).join("");
+  } else if(photos.length === 1){
+    galEl.className = "ov-gallery single";
+    galEl.style.display = "block";
+    galEl.innerHTML = `<img src="${photos[0]}" loading="lazy" alt="${s.title}">`;
+  } else {
+    galEl.style.display = "none";
+    galEl.innerHTML = "";
+  }
+
+  let html = "";
+  if(photos.length > 0 && photos.length < 3){
+    html += `<p class="photonote">※このスポットは公式に掲載されている写真が${photos.length}点のみのため、${photos.length}点で掲載しています。</p>`;
+  }
+  html += s.body.map(p=>`<p>${p}</p>`).join("");
+  html += `<dl class="infogrid">` + Object.entries(s.info).map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join("") + `</dl>`;
+  html += `<div class="linkrow">`;
+  if(s.official) html += `<a class="linkbtn gold" href="${s.official}" target="_blank" rel="noopener"><span>公式サイト</span><span class="larrow">↗</span></a>`;
+  if(s.extraLinks) s.extraLinks.forEach(l=>{
+    html += `<a class="linkbtn gold" href="${l.url}" target="_blank" rel="noopener"><span>${l.label}</span><span class="larrow">↗</span></a>`;
+  });
+  if(s.tabelog) html += `<a class="linkbtn gold" href="${s.tabelog}" target="_blank" rel="noopener"><span>食べログで見る</span><span class="larrow">↗</span></a>`;
+  html += `<a class="linkbtn map" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.mapQuery)}" target="_blank" rel="noopener"><span>Googleマップで開く</span><span class="larrow">↗</span></a>`;
+  html += `</div>`;
+  document.getElementById("ovBody").innerHTML = html;
+
+  overlay.classList.add("open");
+  ovClose.style.display = "flex";
+  document.body.style.overflow = "hidden";
+  overlay.scrollTop = 0;
+}
+function closeOverlay(){
+  overlay.classList.remove("open");
+  ovClose.style.display = "none";
+  document.body.style.overflow = "";
+}
+ovClose.addEventListener("click", closeOverlay);
+document.addEventListener("click", (e)=>{
+  const btn = e.target.closest("[data-spot]");
+  if(btn){ openSpot(btn.dataset.spot); }
+});
+</script>
+</body>
+</html>
